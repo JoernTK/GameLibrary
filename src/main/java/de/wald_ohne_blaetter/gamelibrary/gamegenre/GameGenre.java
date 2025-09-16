@@ -1,5 +1,16 @@
 package de.wald_ohne_blaetter.gamelibrary.gamegenre;
 
+/**
+ * Represents a genre in the game library.
+ * <p>
+ * This class is used as a JPA entity to store relevant information about a genre.
+ * </p>
+ *
+ * @author Luke Effer
+ * @version 0.0.1
+ * @since 2025-09-15
+ */
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -21,16 +32,16 @@ public class GameGenre
      * Primary Key
      */
     @Id
-    private Long id;
+    private Long genre_id;
 
 
     /**
      * Name of the game genre. Cannot be empty
      */
-    private String game_genre_name;
+    private String genre_name;
 
     /**
      * Description of the game genre. Cannot be empty
      */
-    private String game_genre_description;
+    private String genre_description;
 }
