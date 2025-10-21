@@ -53,4 +53,8 @@ public class Address
      * The City/Village. Cannot be empty
      */
     public String address_ort;
+
+    public String getStreetAndNumber() {
+        return address_street + " " + address_house_number;
+    }
 }

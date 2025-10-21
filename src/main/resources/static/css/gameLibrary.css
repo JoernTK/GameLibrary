@@ -1,0 +1,73 @@
+/* ===== Base ===== */
+body {
+    padding: 25px;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    font-family: sans-serif;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ===== Header ===== */
+header .container {
+    background-color: #333;
+    color: #fff;
+    padding: 16px 24px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .left,
+header .right {
+    display: flex;
+    gap: 16px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Table ===== */
+.game-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.game-table thead th {
+    background-color: #212121;
+    color: #fff;
+    text-align: left;
+    padding: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #000;
+}
+
+.game-table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #000;
+}
+
+/* Row zebra striping */
+.game-table tbody tr:nth-child(odd) {
+    background-color: #884305;
+    color: #fff;
+}
+
+.game-table tbody tr:nth-child(even) {
+    background-color: #a8461d;
+    color: #fff;
+}

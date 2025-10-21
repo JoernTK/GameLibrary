@@ -1,0 +1,56 @@
+<!-- src/main/resources/templates/fragments/fragments.html -->
+<!--
+  This file only contains fragments (no full HTML skeleton).
+  Usage:
+    <div th:replace="~{fragments/fragments :: header}"></div>
+    <div th:replace="~{fragments/fragments :: gameTable}"></div>
+-->
+
+<!-- =========================
+     HEADER FRAGMENT
+     Usage:
+        <div th:replace="~{fragments/fragments :: header}"></div>
+========================= -->
+<th:block th:fragment="header">
+    <header>
+        <div class="container">
+            <div class="left">
+                <a th:href="@{/static}" class="home-button">Home</a>
+            </div>
+            <div class="right">
+                <a th:href="@{/funktion1}" class="header-link">Funktion 1</a>
+                <a th:href="@{/funktion2}" class="header-link">Funktion 2</a>
+                <a th:href="@{/funktion3}" class="header-link">Funktion 3</a>
+            </div>
+        </div>
+    </header>
+</th:block>
+
+
+
+<!-- =========================
+     GAME_TABLE-FRAGMENT
+     Usage:
+        <div th:replace="~{fragments/fragments :: gameTable}"></div>
+     Needs model attributes:
+       - games : List<Game>
+       - cols  : List<GameTabelLabel> with fields 'attribut' and 'label'
+========================= -->
+<th:block th:fragment="gameTable">
+    <table class="game-table">
+        <thead>
+        <tr>
+            <th th:each="col : ${cols}" th:text="${col.label}">Label</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Make the current row object available for *{...} expressions -->
+        <tr th:each="g : ${games}" th:object="${g}">
+            <!-- Preprocess attribute name (e.g. 'game_price') to a real property access -->
+            <td th:each="col : ${cols}"
+                th:with="val=*{__${col.attribut}__}"
+                th:text="${val} ?: '-'">-</td>
+        </tr>
+        </tbody>
+    </table>
+</th:block>

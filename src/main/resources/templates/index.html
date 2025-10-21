@@ -1,0 +1,18 @@
+<!-- src/main/resources/templates/index.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="/css/gameLibrary.css">
+</head>
+<body>
+
+<!-- Header -->
+<div th:replace="~{fragments/fragments :: header}"></div>
+
+<!-- Game table -->
+<div th:replace="~{fragments/fragments :: gameTable}"></div>
+
+</body>
+</html>

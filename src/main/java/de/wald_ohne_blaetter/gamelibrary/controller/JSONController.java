@@ -25,31 +25,31 @@ import de.wald_ohne_blaetter.gamelibrary.game.GameService;
 @RestController
 public class JSONController {
 
-  /**
-   * Service class for game-related operations.
-   * This is injected automatically by Spring.
-   */
-  @Autowired
-  private GameService gameService;
+    /**
+     * Service class for game-related operations.
+     * This is injected automatically by Spring.
+     */
+    @Autowired
+    private GameService gameService;
 
-  /**
-   * Endpoint to retrieve all {@link Game} entities.
-   *
-   * @return A list of all games.
-   */
-  @GetMapping("all")
-  public List<Game> getAllGames() {
-    return gameService.getAllGames();
-  }
+    /**
+     * Endpoint to retrieve all {@link Game} entities.
+     *
+     * @return A list of all games.
+     */
+    @GetMapping("all")
+    public List<Game> getAllGames() {
+        return gameService.getAllGames();
+    }
 
-  /**
-   * Endpoint to create a new {@link Game}.
-   *
-   * @param game The game to be created.
-   * @return The created game entity.
-   */
-  @PostMapping("create")
-  public Game createGame(@RequestBody Game game) {
-    return gameService.saveGame(game);
-  }
+    /**
+     * Endpoint to create a new {@link Game}.
+     *
+     * @param game The game to be created.
+     * @return The created game entity.
+     */
+    @PostMapping("create")
+    public Game createGame(@RequestBody Game game) {
+        return gameService.saveGame(game);
+    }
 }

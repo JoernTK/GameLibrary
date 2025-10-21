@@ -2,6 +2,7 @@ package de.wald_ohne_blaetter.gamelibrary.game;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 import de.wald_ohne_blaetter.gamelibrary.address.Address;
 import de.wald_ohne_blaetter.gamelibrary.gamegenre.GameGenre;
@@ -133,16 +134,11 @@ public class Game
 
   /**
    * Genre ID of the game
-   * Imported as a foreign key
+   * Imported as a foreign key TODO: ????
    */
-  @ManyToMany
-  @JoinColumn(name = "genre_id")
-  private GameGenre genre_id;
-
-  /**
-   * who wishes to play this game?
-   * Can this also be the unique player ID?
-   */
+  @ManyToOne
+  @JoinColumn(name = "genre_ids")
+  private GameGenre genre_ids;
 
   /**
    * Is this game only playable once?
